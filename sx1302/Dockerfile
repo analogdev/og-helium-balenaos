@@ -7,7 +7,8 @@ RUN make clean all
 RUN make install
 RUN make install_conf
 WORKDIR /home/pi/sx1302_hal/bin
+COPY restart.sh .
 COPY start.sh .
-RUN chmod +x reset_lgw.sh start.sh
+RUN chmod +x restart.sh start.sh
 RUN sed -i -e "s/localhost/helium-miner/g" global_conf.json.sx1250.US915
 ENTRYPOINT ["./start.sh"]
