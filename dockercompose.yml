@@ -1,0 +1,21 @@
+version: "2.1"
+services:
+  loragtwpktfwd:
+    restart: always
+    build: ./sx1302
+    privileged: true
+  helium_miner:
+    restart: always
+    image: quay.io/team-helium/miner:latest-arm64
+    ports:
+      - "44158:44158/tcp"
+      - "1680:1680/udp"
+    volumes:
+      - 'miner-data:/var/data'
+      - 'miner-log:/var/log/miner'
+    environment:
+      - 'REGION_OVERRIDE=US915'
+
+volumes:
+  miner-data:
+  miner-log:
