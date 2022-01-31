@@ -1,5 +1,5 @@
 FROM balenalib/aarch64-debian:bullseye-build
-RUN apt-get update && install_packages git build-essential wget -y --no-install-recommends
+RUN apt-get update && install_packages git build-essential wget openssh-server -y --no-install-recommends
 WORKDIR /home/pi/
 RUN git clone https://github.com/analogdev/sx1302_hal.git
 WORKDIR /home/pi/sx1302_hal
