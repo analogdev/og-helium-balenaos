@@ -9,6 +9,7 @@ services:
       - REGION=US915
       - CONCENTRATOR_INTERFACE=17
       - CONCENTRATOR_MODEL=sx1302
+      - CONFIG_FILE=/opt/packet_forwarder/configs/local_conf.json
   helium_miner:
     restart: always
     image: quay.io/team-helium/miner:latest-arm64
