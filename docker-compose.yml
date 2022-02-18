@@ -2,7 +2,7 @@ version: "2.1"
 services:
   loragtwpktfwd:
     restart: always
-    image: docker pull ghcr.io/heliumdiy/sx1302_hal:latest
+    image: ghcr.io/heliumdiy/sx1302_hal:latest
     privileged: true
   helium_miner:
     restart: always
