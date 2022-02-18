@@ -31,3 +31,4 @@ services:
 volumes:
   miner-data:
   miner-log:
+  pf:
