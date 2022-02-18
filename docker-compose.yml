@@ -2,7 +2,7 @@ version: "2.1"
 services:
   loragtwpktfwd:
     restart: always
-    build: ./sx1302
+    image: docker pull ghcr.io/heliumdiy/sx1302_hal:latest
     privileged: true
   helium_miner:
     restart: always
@@ -13,8 +13,6 @@ services:
     volumes:
       - 'miner-data:/var/data'
       - 'miner-log:/var/log/miner'
-    environment:
-      - 'REGION_OVERRIDE=US915'
 
 volumes:
   miner-data:
