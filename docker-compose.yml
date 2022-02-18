@@ -1,9 +1,14 @@
 version: "2.1"
 services:
-  loragtwpktfwd:
+  packet_forwarder:
     restart: always
     image: ghcr.io/heliumdiy/sx1302_hal:latest
     privileged: true
+    environment:
+      - VENDOR=rakv2
+      - REGION=US915
+      - CONCENTRATOR_INTERFACE=17
+      - CONCENTRATOR_MODEL=sx1302
   helium_miner:
     restart: always
     image: quay.io/team-helium/miner:latest-arm64
